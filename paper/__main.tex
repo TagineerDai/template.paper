@@ -1,0 +1,55 @@
+\documentclass{article}
+% Specific paper size under guidance of AuthorKits
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+% Use the *.sty package.
+\usepackage{paper_sty}
+
+% Use the postscript times font!
+\usepackage{times}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage[utf8]{inputenc}
+\usepackage[small]{caption}
+
+% Include other packages here, before hyperref.
+\usepackage{mmstyle}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+%%%%%%%%% TITLE
+\title{Title}
+
+%%%%%%%%% AUTHOR
+% Add authors under guidance of AuthorKit
+
+\begin{document}
+
+\maketitle
+
+\input{0_abstract}
+\input{1_intro}
+\input{2_related}
+\input{3_methodology}
+    % 3_methodology_prob
+    % 3_methodology_model
+\input{4_exp}
+    % 4_exp_setting
+    % 4_exp_comp
+    % 4_exp_ablation
+\input{5_conclusion}
+
+%References and End of Paper
+
+%% The file *.bst is a bibliography style file for BibTeX
+\bibliographystyle{ref_bst}
+\bibliography{../bib/ref}
+
+\end{document}
