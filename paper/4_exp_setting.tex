@@ -1,8 +1,70 @@
 % !TEX root = 0_main.tex
 
-\subsection{Experimental Settings}
+% \subsection{Experimental Settings}
 
-%% Metric equation
-\begin{equation}
-loss = \lambda_a * loss_{a} + \lambda_b * loss_{b}
-\end{equation}
+\subsection{Datasets and tasks}
+
+\begin{itemize}
+    \item \textbf{PASCAL VOC 2007/2012}
+
+    \item \textbf{ImageNet}
+
+    \item \textbf{Microsoft COCO}
+
+    \item \textbf{ILSVRC}
+\end{itemize}
+
+\subsection{Protocols}
+
+What's protocol? Is it some data detail, such as store space, 
+dimension and properties?
+
+\begin{itemize}
+    \item \textbf{TODO}
+\end{itemize}
+
+
+\subsection{Metrics}
+
+In this section, we will introduce some metrics used in forementioned 
+detection datasets and tasks. 
+
+\begin{itemize}
+
+    \item \textbf{mean Average Precision(mAP)} 
+
+    \item \textbf{recall@K} 
+
+    \item \textbf{FP, TP, RoC and AuC}
+
+    \item \textbf{Intersection-over=Union (IoU) overlap}
+
+    \item \textbf{Parameterizations of something}
+
+    \item \textbf{FLOPS} One multiplication followed by 
+    one addition.
+    % calculation with some layer and attrs.
+
+    \end{itemize}
+    
+\subsection{Hyper-parameter}
+
+Training setting will be detailed in this section.
+
+\begin{itemize}
+
+    \item \textbf{Initialization} The XXXNet can be trained end-to-end by 
+    backpropagation and \emph{stochastic gradient descent(SGD)}. Draw weight from zero-mean 
+    \emph{Gaussian distribution} with standard deviation 0.01.
+
+    \item \textbf{Batching, sampling and Pruning} The sampled positive and 
+    negative samples have a ratio of up to $1:1$.
+
+    \item \textbf{Optimizer/Solver} We use a \emph{weight decay} of 0.01 and 
+    a \emph{learning rate} of 0.001. We use \emph{momentum} for the first 60w 
+    data. 
+
+    \item \textbf{Implementation platform} Our implementation 
+    uses Caffe/ TensorFlow etc.\misscite
+
+\end{itemize}
