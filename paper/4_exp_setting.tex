@@ -7,11 +7,24 @@
 \begin{itemize}
     \item \textbf{PASCAL VOC 2007/2012}
 
-    \item \textbf{ImageNet}
+    \item \textbf{ImageNet 2012} 
+        \begin{itemize}
+            \item ILSVRC
+            \item Classification
+            \item Localization
+        \end{itemize}
 
     \item \textbf{Microsoft COCO}
+        \begin{itemize}
+            \item Object Detection
+            \item Segmentation
+        \end{itemize}
+    \item \textbf{CIFAR-10}
+        \begin{itemize}
+            \item Classification
+        \end{itemize}
 
-    \item \textbf{ILSVRC}
+
 \end{itemize}
 
 \subsection{Protocols}
@@ -31,21 +44,21 @@ detection datasets and tasks.
 
 \begin{itemize}
 
-    \item \textbf{mean Average Precision(mAP)} 
-
-    \item \textbf{recall@K} 
-
+    \item \textbf{mean Average Precision(mAP$\mathbf{[.5, .95]}$)} 
+    \item \textbf{recall@K}
+    \item \textbf{top@K error rate} 
     \item \textbf{FP, TP, RoC and AuC}
-
     \item \textbf{Intersection-over=Union (IoU) overlap}
+    \item \textbf{Parameterizations of something} 
+    %
+    E.g. Parameterization of proposal rectangle in Faster R-CNN
 
-    \item \textbf{Parameterizations of something}
+    \item \textbf{FLOPs and params} Multiplication-adds, representing 
+    complexity.
+    
+    \item \textbf{Exec time} E.g. ~13$\times$ actual speed up.
 
-    \item \textbf{FLOPS} One multiplication followed by 
-    one addition.
-    % calculation with some layer and attrs.
-
-    \end{itemize}
+\end{itemize}
     
 \subsection{Hyper-parameter}
 
@@ -56,13 +69,15 @@ Training setting will be detailed in this section.
     \item \textbf{Initialization} The XXXNet can be trained end-to-end by 
     backpropagation and \emph{stochastic gradient descent(SGD)}. Draw weight from zero-mean 
     \emph{Gaussian distribution} with standard deviation 0.01.
-
+    
     \item \textbf{Batching, sampling and Pruning} The sampled positive and 
-    negative samples have a ratio of up to $1:1$.
-
+    negative samples have a ratio of up to $1:1$. The models are trained for up to 
+    $60\times10^4$ iterations.
+    
     \item \textbf{Optimizer/Solver} We use a \emph{weight decay} of 0.01 and 
     a \emph{learning rate} of 0.001. We use \emph{momentum} for the first 60w 
-    data. 
+    data. \emph{Learning rate} starts from 0.1 and is divided by 10 when the error 
+    \emph{plateaus}. We use or not use \emph{Dropout}.
 
     \item \textbf{Implementation platform} Our implementation 
     uses Caffe/ TensorFlow etc.\misscite
